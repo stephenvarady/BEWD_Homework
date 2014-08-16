@@ -1,8 +1,9 @@
-# DEFINES SECRET NUMBER
+# Defines random secret number
 
-number = 69
+prng = Random.new
+number = prng.rand(100)
 
-# Gets user input for guess
+# # Gets user input for guess
 
 def user_guess
 	print "Guess a number between 1 and 100: "
@@ -27,7 +28,7 @@ end
 
 puts "Hey, wanna play the Secret Number Game?"
 
-5.downto(1) do |num|
+10.downto(1) do |num|
 
 	puts "You have #{num} guesses left."
 	guess = user_guess
