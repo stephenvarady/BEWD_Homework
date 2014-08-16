@@ -23,9 +23,17 @@ def check_number(guess, number)
 
 end
 
+# Runs program
+
 puts "Hey, wanna play the Secret Number Game?"
-guess = user_guess
-evaluate = check_number(guess, number)
+
+5.downto(1) do |num|
+
+	puts "You have #{num} guesses left."
+	guess = user_guess
+	evaluate = check_number(guess, number)
+
+end
 
 
 
