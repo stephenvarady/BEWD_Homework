@@ -3,7 +3,7 @@
 prng = Random.new
 number = prng.rand(100)
 
-# # Gets user input for guess
+# Gets user input for guess
 
 def user_guess
 	print "Guess a number between 1 and 100: "
@@ -15,11 +15,12 @@ end
 def check_number(guess, number)
 
 	if guess > number
-		puts "Too high!"
+		puts "Too high! Try a lower number."
 	elsif guess < number
-		puts "Too low!"
+		puts "Too low! Try a higher number."
 	else
-		puts "Wow, you guessed my secret number!"
+		puts "You guessed my secret number!"
+		abort("You win! The game is over.")
 	end
 
 end
@@ -28,7 +29,7 @@ end
 
 puts "Hey, wanna play the Secret Number Game?"
 
-10.downto(1) do |num|
+6.downto(1) do |num|
 
 	puts "You have #{num} guesses left."
 	guess = user_guess
