@@ -7,7 +7,7 @@ number = prng.rand(100)
 
 def user_guess
 	print "Guess a number between 1 and 100: "
-	gets.chomp.to_i
+	gets.to_i
 end
 
 # Evaluates user guess, puts feedback
@@ -25,18 +25,22 @@ def check_number(guess, number)
 
 end
 
-# Runs program
+# Program begins
+# Program begins
 
 puts "Hey, wanna play the Secret Number Game?"
+
+# Loops until user runs out of guesses
 
 6.downto(1) do |num|
 
 	puts "You have #{num} guesses left."
 	guess = user_guess
-	evaluate = check_number(guess, number)
+	check_number(guess, number)
+
+	if num == 1
+		puts "Tough luck, you ran out of guesses."
+		abort("You lose! The game is over.")
+	end
 
 end
-
-
-
-
